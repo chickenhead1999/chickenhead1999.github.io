@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: skyblue; /* 天蓝色背景 */
+        }
+        .header {
+            width: 100%;
+            background-color: #000000; /* 黑色背景 */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+        }
+        .quadrant {
+            width: 50%;
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quadrant button {
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 12px; /* 增加按钮弧度 */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 按钮阴影 */
+            border: none;
+            outline: none;
+            background-color: white;
+        }
+        .quadrant button:hover {
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* 按钮悬停阴影 */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">前端 背景色实验</div>
+    <div class="quadrant">
+        <a href="1.html"><button>输入式</button></a>
+    </div>
+    <div class="quadrant">
+        <a href="2.html"><button>滑动式</button></a>
+    </div>
+    <div class="quadrant">
+        <a href="3.html"><button>键入式</button></a>
+    </div>
+    <div class="quadrant">
+        <a href="4.html"><button>点击式</button></a>
+    </div>
+</body>
+</html>

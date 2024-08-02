@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑块调整背景颜色深度</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+            background-color: hsl(0, 100%, 50%);
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider {
+            width: 300px;
+        }
+        .value-label {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <input type="range" class="slider" min="0" max="360" value="0" />
+        <div class="value-label">颜色角度: 0°</div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider');
+        const label = document.querySelector('.value-label');
+
+        slider.addEventListener('input', function() {
+            const hue = slider.value;
+            document.body.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+            label.textContent = `颜色角度: ${hue}°`;
+        });
+    </script>
+</body>
+</html>
