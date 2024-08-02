@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景色切换</title>
+    <style>
+        body {
+            background-color: red;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let colors = ['red','orange','yellow','green','blue','indigo','purple'];
+        let currentIndex = 0;
+
+        document.body.addEventListener('click', function() {
+            //循环语句
+            currentIndex = (currentIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[currentIndex];
+        });
+    </script>
+</body>
+</html>

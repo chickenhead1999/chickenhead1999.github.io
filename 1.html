@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入颜色切换背景</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+        .color-input {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="color-input" placeholder="输入颜色或十六进制值" />
+
+    <script>
+        document.querySelector('.color-input').addEventListener('input', function(event) {
+            let color = event.target.value;
+            document.body.style.backgroundColor = color;
+        });
+    </script>
+</body>
+</html>

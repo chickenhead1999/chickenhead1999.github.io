@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>总导览</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding: 20px;
+        }
+        .link-card {
+            display: block;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .link-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">前端实验室</div>
+        <nav>
+            <a href="mainindex.html">首页</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h1>总导览</h1>
+        <a href="project1/index.html" class="link-card">
+            <h2>背景</h2>
+            <p>进入首页</p>
+        </a>
+        <a href="project2/index.html" class="link-card">
+            <h2>按钮</h2>
+            <p>进入首页</p>
+        </a>
+        <!-- 可以在这里继续添加其他链接卡片 -->
+    </div>
+</body>
+</html>
