@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成物理效果方块</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        #button {
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px #999;
+            transition: all 0.2s ease;
+            outline: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #button:active {
+            box-shadow: inset -2px -2px #666;
+            transform: translate(-50%, -50%) translateY(2px);
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #FF5733;
+            position: absolute;
+            top: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="button">生成方块</button>
+
+    <script>
+        const boxes = [];
+        const gravity = 0.98;
+        const friction = 0.9;
+        const bounce = 0.999;
+        const button = document.getElementById('button');
+
+        function getButtonBoundingBox() {
+            const rect = button.getBoundingClientRect();
+            return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom };
+        }
+
+        button.addEventListener('click', () => {
+            const box = document.createElement('div');
+            box.className = 'box';
+            const randomX = Math.random() * (window.innerWidth - 50); // 随机生成 x 轴位置
+            box.style.left = `${randomX}px`;
+            document.body.appendChild(box);
+            boxes.push({ element: box, posX: randomX, posY: 0, velocity: 0 });
+        });
+
+        function animate() {
+            const buttonBox = getButtonBoundingBox();
+
+            boxes.forEach(box => {
+                box.velocity += gravity;
+                box.posY += box.velocity;
+
+                // 碰撞检测并处理
+                boxes.forEach(otherBox => {
+                    if (box !== otherBox) {
+                        const distY = box.posY - otherBox.posY;
+                        const distX = box.posX - otherBox.posX;
+                        if (distY < 50 && distY > -50 && distX < 50 && distX > -50) {
+                            if (box.posY < otherBox.posY) {
+                                box.posY = otherBox.posY - 50;
+                            } else {
+                                box.posY = otherBox.posY + 50;
+                            }
+                            box.velocity *= -bounce;
+                        }
+                    }
+                });
+
+                // 检查与按钮的碰撞
+                if (box.posY + 50 > buttonBox.top && box.posY < buttonBox.bottom &&
+                    box.posX + 50 > buttonBox.left && box.posX < buttonBox.right) {
+                    box.posY = buttonBox.top - 50;
+                    box.velocity *= -bounce;
+                }
+
+                if (box.posY + 50 > window.innerHeight) {
+                    box.posY = window.innerHeight - 50;
+                    box.velocity *= -bounce;
+                }
+
+                box.element.style.top = `${box.posY}px`;
+                box.element.style.left = `${box.posX}px`;
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

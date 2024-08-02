@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器升级</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #counterBox {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #count {
+            font-size: 24px;
+        }
+        #button {
+            padding: 20px 40px;
+            font-size: 24px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px #999;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+        #button:active {
+            box-shadow: inset -2px -2px #666;
+            transform: translateY(2px);
+        }
+        #upgradeMessage {
+            position: absolute;
+            top: 40%;
+            background-color: yellow;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 24px;
+            display: none;
+            pointer-events: none;
+        }
+        #upgradeMessage {
+    background-color: rgba(255, 255, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="counterBox">
+        <span>计数器（过10升级）: </span><span id="count">0</span>
+    </div>
+    <button id="button">点击我</button>
+    <div id="upgradeMessage">升级</div>
+
+    <script>
+        let count = 0;
+        let increment = 1;
+        let lastCheckPoint = 0;
+        const countSpan = document.getElementById('count');
+        const button = document.getElementById('button');
+        const upgradeMessage = document.getElementById('upgradeMessage');
+
+        button.addEventListener('click', () => {
+            count += increment;
+            countSpan.textContent = count;
+
+            if (Math.floor(count / 10) > Math.floor(lastCheckPoint / 10)) {
+                increment++;
+                upgradeMessage.style.display = 'block';
+                setTimeout(() => {
+                    upgradeMessage.style.display = 'none';
+                }, 500);
+            }
+            
+            lastCheckPoint = count;
+        });
+    </script>
+</body>
+</html>
