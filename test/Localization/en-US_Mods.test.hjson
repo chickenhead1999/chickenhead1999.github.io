@@ -1,0 +1,102 @@
+Items: {
+	神的小刀: {
+		DisplayName: 神的小刀
+		Tooltip: “老子看不起任何人”
+	}
+
+	神的玩具: {
+		DisplayName: 神的玩具
+		Tooltip: “欧佐夫之力”
+	}
+
+	神的刺刀: {
+		DisplayName: 神的刺刀
+		Tooltip: ""
+	}
+
+	迷彩内裤: {
+		DisplayName: 迷彩内裤
+		Tooltip: ""
+	}
+
+	godtoy: {
+		Tooltip: ""
+		DisplayName: godtoy
+	}
+
+	星穹之矛: {
+		Tooltip: ""
+		DisplayName: 星穹之矛
+	}
+
+	夕象: {
+		Tooltip: ""
+		DisplayName: 夕象
+	}
+
+	神的飞刀: {
+		Tooltip: ""
+		DisplayName: 神的飞刀
+	}
+
+	雄哥: {
+		DisplayName: 雄哥
+		Tooltip: 别看你今天闹得欢，小心啊，明天拉清单
+	}
+
+	神的菜刀: {
+		DisplayName: 神的菜刀
+		Tooltip: ""
+	}
+
+	神的餐刀: {
+		DisplayName: 神的餐刀
+		Tooltip: ""
+	}
+
+	星梭: {
+		DisplayName: 星梭
+		Tooltip: ""
+	}
+
+	科尔遗物: {
+		DisplayName: 科尔遗物
+		Tooltip: ""
+	}
+
+	神的药水: {
+		DisplayName: 神的药水
+		Tooltip: ""
+	}
+
+	一张牌: {
+		DisplayName: 一张牌
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	GodBullet.DisplayName: God Bullet
+	GoodBullet.DisplayName: Good Bullet
+	苍星殒灭.DisplayName: 苍星殒灭
+	MoodBullet.DisplayName: Mood Bullet
+	MoodBallet.DisplayName: Mood Ballet
+	维尼蜂蜜.DisplayName: 维尼蜂蜜
+	mudbullet.DisplayName: mudbullet
+	先驱怒火.DisplayName: 先驱怒火
+	耀斑.DisplayName: 耀斑
+	mudbullet2.DisplayName: mudbullet2
+	Nadupro.DisplayName: Nadupro
+}
+
+Buffs: {
+	Angryyyy: {
+		DisplayName: Angryyyy
+		Description: Mods.test.Buffs.Angryyyy.Description
+	}
+
+	Nadu: {
+		DisplayName: Nadu
+		Description: Mods.test.Buffs.Nadu.Description
+	}
+}

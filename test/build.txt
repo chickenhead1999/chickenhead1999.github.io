@@ -1,0 +1,3 @@
+displayName = chickenhead mod 3.0
+author = shit
+version = 0.1
